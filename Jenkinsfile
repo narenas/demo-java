@@ -13,7 +13,7 @@ pipeline {
         stage ('Deploy') {
             steps {
                 echo 'Deploying'
-                sh 'mvn -X deploy:deploy-file -DgeneratePom=false DrepositoryId=nexus -Durl=http://nexus:8081/repository/devel/ -DpomFile=pom.xml -Dfile=target/demo.war'
+                sh 'mvn -X deploy:deploy-file -DgeneratePom=false DrepositoryId=nexus -Durl=http://nexus:8081/repository/devel-snapshot/ -DpomFile=pom.xml -Dfile=target/demo.war'
             }
         }
     }
