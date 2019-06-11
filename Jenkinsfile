@@ -7,7 +7,14 @@ pipeline {
         stage ('Build'){
             steps {
                 echo  'echo Hello World'
-                sh 'mvn package '
+                sh 'mvn package'
+            }
+        }
+        stage ('QA') {
+            steps {
+                withSonarQubeEnv('sonar') {
+                    sh 'mvn clean package sonar:sonar'
+                }
             }
         }
         stage ('Deploy') {
