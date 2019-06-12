@@ -3,6 +3,9 @@ pipeline {
     tools {
         maven 'mvn-3.6.1'
     }
+    environment {
+        USER_CREDS = credentials('maven-nexus-creds')
+    }
     stages {
         stage ('Build'){
             steps {

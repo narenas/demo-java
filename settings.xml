@@ -5,8 +5,8 @@
   <servers>
     <server>
       <id>nexus</id>
-      <username>narenas</username>
-      <password>n1c0p4ul1</password>
+      <username>${env.USER_CREDS_USR}</username>
+      <password>${env.USER_CREDS_PSW</password>
     </server>
   </servers>
 </settings>
